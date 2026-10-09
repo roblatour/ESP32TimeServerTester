@@ -1,3 +1,3 @@
 # ESP32TimeServerTester
-An ESP32 based tester for NTP servers on your private network
+An ESP32 based tester for NTP servers on your private network<br>
 coming soon
