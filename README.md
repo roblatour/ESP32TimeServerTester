@@ -188,12 +188,12 @@ idf.py -p COMx flash monitor
 2. Enter a friendly **target time server** name and its IPv4 and/or IPv6 address,
    along with the applicable NTP port (default **123**). These are the *server's*
    addresses, not the tester's addresses.   
-4. If the server uses NTPv4 symmetric-key authentication, enter its key ID and
+3. If the server uses NTPv4 symmetric-key authentication, enter its key ID and
    key value. Optionally enable the IPv4 and IPv6 mini saturated stress tests.
-5. Save the settings, then run all tests, just the NTP tests, the IPv4 or IPv6
+4. Save the settings, then run all tests, just the NTP tests, the IPv4 or IPv6
    group, or an individual test. Results and reported timestamps appear in the
    test table.
-6. Once results are available, click **Download report** to export them as a
+5. Once results are available, click **Download report** to export them as a
    Markdown file. Here is an [example report](./Misc/ESP32TimeServerTester_ESP32TimeServer_Test_(ULA).md).
 
 The tester includes ping checks, standard NTPv3 and NTPv4 requests,
