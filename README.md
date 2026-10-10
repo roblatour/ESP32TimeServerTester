@@ -48,7 +48,7 @@ button exports the settings and results as Markdown; see an
 **Important:** Place the 470&Omega; resistor in series between GPIO 4 and **DI**
 on the first WS2812. Do not omit it.
 
-#### Second WS2812 RGB LED → first WS2812 RGB LED
+#### First WS2812 RGB LED → second WS2812 RGB LED
 
 | First WS2812 pin | Second WS2812 pin |
 | ---------------- | ----------------- |
