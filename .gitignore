@@ -1,0 +1,96 @@
+build/
+sdkconfig
+sdkconfig.old
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Log files
+*.log
+
+.vscode/
+
+# Build artifacts and directories
+**/build/
+build/
+build-esp32p4-pre-v3/
+build-esp32p4-rev-1-3/
+*.o
+*.a
+*.out
+*.exe # For any host-side utilities compiled on Windows
+
+# ESP-IDF specific build outputs
+*.bin
+*.elf
+*.map
+flasher_args.json # Generated in build directory
+sdkconfig
+sdkconfig.old
+sdkconfig.esp32p4-pre-v3.old
+build-esp32p4-pre-v3/
+
+# ESP-IDF dependencies
+# For older versions or manual component management
+/components/.idf/
+**/components/.idf/
+# For modern ESP-IDF component manager
+managed_components/
+# If ESP-IDF tools are installed/referenced locally to the project
+.espressif/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+dependencies.lock
+
+# Python environment files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+dist/
+
+# Virtual environment folders
+venv/
+.venv/
+env/
+
+# Language Servers
+.clangd/
+.ccls-cache/
+compile_commands.json
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# auto release update files
+Release/
+
+# personalize settings
+ESP32TimeServerSettings -*.h
+_switch*.bat
+
+
+#others
+misc/doNotPublish
+main/doNotPublish
+AGENTS.md
+agent.md
+
+# User-specific configuration files
+*.user
+*.workspace # General workspace files, can be from various tools
+*.suo       # Visual Studio Solution User Options
+*.sln.docstates # Visual Studio
+ 
