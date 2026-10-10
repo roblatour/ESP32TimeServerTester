@@ -29,7 +29,7 @@ button exports the settings and results as Markdown; see an
 | --- | -------------------------------------------------------------------------------------------------------------------------- |
 | 1   | WaveShare [ESP32-P4-ETH](https://www.waveshare.com/esp32-p4-eth.htm?sku=32086) or ESP32-P4-POE-ETH development board       |
 | 2   | (optional) WS2812 RGB LEDs ([AliExpress](https://www.aliexpress.com/item/1005009109749689.html))                           |
-| 1   |            470&Omega; resistor for the data connection to the first WS2812                                                 |
+| 1   |            470&Omega; resistor for the data connection to the first WS2812 (if the optional WS2812s are used)              |
 | —   | Ethernet cable, hookup wires, and either a PoE-capable switch/injector (for a PoE board) or a USB-C power supply and cable |
 
 > **WARNING — Do not power the ESP32-P4-POE-ETH from both USB-C and a PoE-powered
