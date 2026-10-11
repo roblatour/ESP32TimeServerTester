@@ -184,16 +184,17 @@ idf.py -p COMx flash monitor
 1. Connect the tester to your network via Ethernet and power it on. Open its
    web interface using the hostname or IPv4 address printed in the console
    log. The default hostname is `ESP32TimeServerTester`. So for example, using 
-   that default browse to `http://esp32timeservertester'
-2. Enter a friendly **target time server** name and its IPv4 and/or IPv6 address,
+   your default browser, browse to `http://esp32timeservertester` or `http://x.x.x.x`
+   (where x.x.x.x is the ESP32TimseServer's IPv4 address as shown in its console log).
+3. Enter a friendly **target time server** name and its IPv4 and/or IPv6 address,
    along with the applicable NTP port (default **123**). These are the *server's*
    addresses, not the tester's addresses.   
-3. If the server uses NTPv4 symmetric-key authentication, enter its key ID and
+4. If the server uses NTPv4 symmetric-key authentication, enter its key ID and
    key value. Optionally enable the IPv4 and IPv6 mini saturated stress tests.
-4. Save the settings, then run all tests, just the NTP tests, the IPv4 or IPv6
+5. Save the settings, then run all tests, just the NTP tests, the IPv4 or IPv6
    group, or an individual test. Results and reported timestamps appear in the
    test table.
-5. Once results are available, click **Download report** to export them as a
+6. Once results are available, click **Download report** to export them as a
    Markdown file. Here is an [example report](./Misc/ESP32TimeServerTester_ESP32TimeServer_Test_(ULA).md).
 
 The tester includes ping checks, standard NTPv3 and NTPv4 requests,
