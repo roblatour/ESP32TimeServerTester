@@ -35,7 +35,7 @@ button exports the settings and results as Markdown; see an
 > **WARNING — Do not power the ESP32-P4-POE-ETH from both USB-C and a PoE-powered
 > Ethernet cable at the same time.** Use only one power source.
 
-### Optional Wiring if your going to use the WS2812 RBG LEDs
+### Optional wiring if your going to use the WS2812 RBG LEDs
 
 #### First WS2812 RGB LED → ESP32-P4-ETH / ESP32-P4-POE-ETH
 
