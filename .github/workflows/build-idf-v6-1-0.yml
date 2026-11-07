@@ -1,4 +1,4 @@
-name: Build ESP32TimeServer (ESP-IDF v6.1)
+name: Build ESP32TimeServerTester (ESP-IDF v6.1)
 
 on:
   push:
@@ -9,13 +9,16 @@ on:
       - '**.cpp'
       - '**.h'
       - '**.hpp'
+      - '**.in'
+      - '**.cmake'
       - 'CMakeLists.txt'
       - '**/CMakeLists.txt'
-      - 'sdkconfig'
-      - 'sdkconfig.*'
+      - 'sdkconfig.defaults'
+      - 'config/**'
+      - 'partitions.csv'
       - 'main/idf_component.yml'
-      - 'dependencies.lock'
-      - '.github/workflows/build-idf-v6-1.yml'
+      - 'main/favicon.ico'
+      - '.github/workflows/build-idf-v6-1-0.yml'
   pull_request:
     branches: [ main ]
     paths:
@@ -24,32 +27,43 @@ on:
       - '**.cpp'
       - '**.h'
       - '**.hpp'
+      - '**.in'
+      - '**.cmake'
       - 'CMakeLists.txt'
       - '**/CMakeLists.txt'
-      - 'sdkconfig'
-      - 'sdkconfig.*'
+      - 'sdkconfig.defaults'
+      - 'config/**'
+      - 'partitions.csv'
       - 'main/idf_component.yml'
-      - 'dependencies.lock'
-      - '.github/workflows/build-idf-v6-1.yml'
+      - 'main/favicon.ico'
+      - '.github/workflows/build-idf-v6-1-0.yml'
   workflow_dispatch:
 
 jobs:
   build-v61:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        # Chip-revision profiles from config/, as documented in README.md.
+        profile: [ esp32p4_rev_v3_1, esp32p4_rev_v3_0, esp32p4_rev_pre_v3 ]
+
+    name: build-v61 (${{ matrix.profile }})
+
     steps:
     - name: Checkout Repository From Scratch
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         submodules: 'recursive'
 
     - name: Setup Compiler Cache (ccache)
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: .ccache
-        key: esp32p4-v6.1-ccache-${{ github.run_id }}
+        key: esp32p4-v6.1-${{ matrix.profile }}-ccache-${{ github.run_id }}
         restore-keys: |
-          esp32p4-v6.1-ccache-
+          esp32p4-v6.1-${{ matrix.profile }}-ccache-
 
     - name: Clean Compile with ESP-IDF v6.1
       uses: espressif/esp-idf-ci-action@v1
@@ -59,10 +73,10 @@ jobs:
         esp_idf_version: v6.1
         target: esp32p4
         command: |
-          idf.py --ccache build
+          idf.py --ccache -D SDKCONFIG_DEFAULTS="sdkconfig.defaults;config/${{ matrix.profile }}.defaults" build
 
     # - name: Upload Binary Artifact
     #   uses: actions/upload-artifact@v4
     #   with:
-    #     name: ESP32TimeServer_ESP-IDF-v6.1.bin
-    #     path: build/ESP32TimeServer.bin
+    #     name: ESP32TimeServerTester_ESP-IDF-v6.1_${{ matrix.profile }}.bin
+    #     path: build/ESP32TimeServerTester.bin
