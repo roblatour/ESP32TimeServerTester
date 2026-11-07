@@ -1,0 +1,29 @@
+// ESP32TimeServerTester v2
+// Copyright Rob Latour, 2026
+// License: MIT
+// Website: https://github.com/roblatour/ESP32TimeServerTester
+//
+
+#pragma once
+
+#include "ptp_tester.h"
+
+namespace ptp_tester
+{
+    inline constexpr DutPolicy ExtractedDutPolicy{
+        @PTP_POLICY_AVAILABLE@,
+        @PTP_POLICY_AVAILABLE@ ? (@PTP_POLICY_SELECTION@ ? SelectionMode::Ranked : SelectionMode::Legacy) : SelectionMode::Unknown,
+        @PTP_POLICY_AVAILABLE@ ? (@PTP_POLICY_AUTH_ENABLED@ ? (@PTP_POLICY_AUTH_REQUIRED@ ? AuthenticationMode::Required : AuthenticationMode::Mixed) : AuthenticationMode::Disabled) : AuthenticationMode::Unknown,
+        @PTP_POLICY_CAPACITY@,
+        @PTP_POLICY_DOMAIN@,
+        @PTP_POLICY_LOG_ANNOUNCE@,
+        @PTP_POLICY_LOG_SYNC@,
+        @PTP_POLICY_FOREIGN_MS@,
+        @PTP_POLICY_QUALIFICATION_MS@,
+        @PTP_POLICY_SPP@,
+        @PTP_POLICY_KEY_ID@,
+        @PTP_POLICY_NTP_REQUIRED@ != 0,
+        "@PTP_POLICY_IDENTITY@",
+        "@PTP_POLICY_PROVENANCE@"
+    };
+}
