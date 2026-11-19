@@ -13,7 +13,7 @@
 testing NTP over IPv4 and IPv6, PTP Layer 2 Ethernet, and IEEE 1588 PTP Layer 3
 multicast UDP over IPv4, IPv6, or both simultaneously.
 
-![ESP32 Time Server Tester web interface](./misc/screenshot.jpg)
+![ESP32 Time Server Tester web interface](./Misc/screenshot.jpg)
 
 It allows you to save settings for multiple target servers, run individual tests or groups of
 tests, and review live testing results directly in your browser. 
