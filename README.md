@@ -18,7 +18,7 @@ multicast UDP over IPv4, IPv6, or both simultaneously.
 It allows you to save settings for multiple target servers, run individual tests or groups of
 tests, and review live testing results directly in your browser. 
 
-Additionally, the tool provides for a **Downloadable report** which details settings, test scenarios and testing results [click here for an example](./misc/example_report_1.md).
+Additionally, the tool provides for a **Downloadable report** which details settings, test scenarios and testing results [click here for an example](./Misc/example_report_1.md).
 The screenshot and example reports may predate the PTP L3 UDP controls.
 
 ---
